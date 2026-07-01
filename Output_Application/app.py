@@ -9,12 +9,15 @@ st.title("🇬🇲 The Gambia: Food Inflation ML Forecasting Dashboard")
 st.write("An interactive AI platform predicting short-term food price horizons using optimized XGBoost models.")
 
 # 2. LOAD BACKEND RESOURCES
+# Find the directory that app.py is sitting in
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 @st.cache_resource 
 def load_resources():
     df = pd.read_csv("Processed_Data_ML.csv")
     df['Date'] = pd.to_datetime(df['Date'])
     model_month = joblib.load("xgboost_model_m1.pkl") 
     return df, model_month
+    csv_path = os.path.join(BASE_DIR, "Processed_Data_ML.csv")
 
 df, model_month = load_resources()
 
