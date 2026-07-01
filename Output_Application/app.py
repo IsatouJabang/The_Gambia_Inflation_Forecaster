@@ -11,13 +11,15 @@ st.write("An interactive AI platform predicting short-term food price horizons u
 # 2. LOAD BACKEND RESOURCES
 @st.cache_resource 
 def load_resources():
-    df = pd.read_csv("Processed_Data_ML.csv")
-    df['Date'] = pd.to_datetime(df['Date'])
-    model_month = joblib.load("xgboost_model_m1.pkl") 
-
+    # 1. Establish the correct path to this folder first
     current_dir = os.path.dirname(__file__)
     csv_path = os.path.join(current_dir, "Processed_Data_ML.csv")
+    model_path = os.path.join(current_dir, "xgboost_model_m1.pkl")
+
+    # 2. Load the data using the safe paths
     df = pd.read_csv(csv_path)
+    df['Date'] = pd.to_datetime(df['Date'])
+    model_month = joblib.load(model_path) 
 
     return df, model_month
 
