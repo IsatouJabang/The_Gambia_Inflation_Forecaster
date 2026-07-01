@@ -4,7 +4,6 @@ An interactive, end-to-end machine learning platform built to predict short-term
 
 This repository documents the full academic data science lifecycle—spanning raw macroeconomic ingestion, lag-structural feature engineering pipelines, hyperparameter evaluation architectures, and production dashboard deployment.
 
----
 
 ## Project Structure
 
