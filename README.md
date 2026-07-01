@@ -23,16 +23,7 @@ Think of it like an incredibly smart calculator that looks at the past few month
 Project Structure
 This repository is organized cleanly so anyone can find files easily:
 
-The_Gambia_Inflation_Forecaster/
-├── Data/                           
-├── Notebooks/                      
-├── Output_Application/
-│   ├── app.py                      
-│   ├── Processed_Data_ML.csv       
-│   └── xgboost_model_m1.pkl        
-├── requirements.txt                
-└── README.md                       
-
+![Project Folder Structure](structure.png)
 
 Key Features
 
