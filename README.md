@@ -1,27 +1,38 @@
-# 🇬🇲 The Gambia: Food Inflation ML Forecasting Dashboard
+🇬🇲 The Gambia: Food Price Prediction Dashboard
 
-An interactive, end-to-end machine learning platform built to predict short-term consumer food price horizons in The Gambia using optimized gradient-boosted trees (**XGBoost**). 
+This is a smart web tool that predicts where food prices are heading in The Gambia. It uses artificial intelligence (AI) to let users test out different economic situations and instantly see how they might change the cost of food.
 
-This repository documents the full academic data science lifecycle—spanning raw macroeconomic ingestion, lag-structural feature engineering pipelines, hyperparameter evaluation architectures, and production dashboard deployment.
+[Click here to view the live dashboard](https://the-gambia-inflation-forecaster.streamlit.app/)**
 
 
-## Project Structure
+Why This Matters
+When the price of everyday items like rice, oil, and vegetables goes up, it directly affects how much food a family can afford. Traditional economic reports only look at what *already* happened in the past. This project builds a forward-looking tool so that policymakers, researchers, and everyday citizens can anticipate price changes before they happen.
 
-The workspace is organized to mirror an industry-standard machine learning development pipeline:
 
-AI_Project/
-├── Data/                      
-├── PreProcessing/             
-├── Modeling/                   
-├── Documentation/             
-├── Output_Application/         
-│   ├── app.py                  
-│   ├── Processed_Data_ML.csv   
-│   ├── xgboost_model_m1.pkl    
-│   └── Dashboard.ipynb          
-├── .gitignore                  
-├── requirements.txt           
-└── README.md                   
+How the AI Works (In Simple Terms)
+Instead of just guessing, we taught a computer model to find patterns by looking at past historical data from The Gambia and Countries that's economic activities might afftect the Gambia such as: China, Senegal, Russia, Netherlands, Ukraine, USA and UK. 
+
+The AI looks at how food prices react when things like this change:
+Overall Inflation: How fast general prices are rising across the country.
+Exchange Rates How strong the Gambian Dalasi is performing against foreign currencies.
+Interest Rates The rules set by the Central Bank and Treasury bills that control how money flows through the economy.
+
+We used the optimized gradient-boosted trees (XGBoost), a highly accurate machine learning algorithm.
+Think of it like an incredibly smart calculator that looks at the past few months of data, connects the dots, and predicts next month's food price trends.
+
+Project Structure
+This repository is organized cleanly so anyone can find files easily:
+
+The_Gambia_Inflation_Forecaster/
+├── Data/                           
+├── Notebooks/                      
+├── Output_Application/
+│   ├── app.py                      
+│   ├── Processed_Data_ML.csv       
+│   └── xgboost_model_m1.pkl        
+├── requirements.txt                
+└── README.md                       
+
 
 Key Features
 
@@ -34,8 +45,7 @@ variations against historical benchmarks.
 
 Interactive Visualization: Leverages dynamic Plotly timelines to render historical baseline trends side-by-side with live model marker projections.
 
-Evaluation Feature Matrix
-The underlying forecasting model evaluates the following core macroeconomic indicators and historical feedback metrics to generate its predictions:
+Evaluation Feature Matrix: The underlying forecasting model evaluates the following core macroeconomic indicators and historical feedback metrics to generate its predictions:
 
 Feature Name: 
 Inflation
@@ -46,15 +56,6 @@ Exchange_Change_Lag1
 Policy_Rate
 TBill_91D		
 
-Data Type:
-Continuous
-Continuous
-Continuous
-Continuous
-Continuous
-Continuous
-Continuous
-
 Operational Description:			
 Current Year-over-Year (YoY) Aggregate Inflation Rate (%)				
 Historical baseline consumer aggregate index offset (Month -1)				
@@ -63,6 +64,7 @@ Month-over-Month value tracking shifts in local currency pairings
 Delayed structural transmission shocks from exchange adjustments				
 Central Bank of The Gambia standard baseline benchmark interest rate				
 Short-term government debt instruments yield marker index	
+
 
 Model Architecture & Deserialization
 The core forecasting model was built using the XGBoost Regressor framework, utilizing optimized gradient-boosted tree ensembles capable of mapping complex structural non-linearities inherent in developing financial markets. Model weights and training configurations are saved and deserialized instantly on execution via memory-mapped joblib streams.
