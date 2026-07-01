@@ -14,6 +14,11 @@ def load_resources():
     df = pd.read_csv("Processed_Data_ML.csv")
     df['Date'] = pd.to_datetime(df['Date'])
     model_month = joblib.load("xgboost_model_m1.pkl") 
+
+    current_dir = os.path.dirname(__file__)
+    csv_path = os.path.join(current_dir, "Processed_Data_ML.csv")
+    df = pd.read_csv(csv_path)
+
     return df, model_month
 
 df, model_month = load_resources()
