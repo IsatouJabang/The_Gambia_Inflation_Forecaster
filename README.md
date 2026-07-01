@@ -23,7 +23,7 @@ Think of it like an incredibly smart calculator that looks at the past few month
 Project Structure
 This repository is organized cleanly so anyone can find files easily:
 
-![Project Folder Structure](structure.png)
+![Project Folder Structure](structure)
 
 Key Features
 
